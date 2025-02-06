@@ -1,0 +1,206 @@
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 24px;
+    font-family: 'Space Mono', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--Light-grayish-cyan);
+}
+
+body > img {
+    margin: 40px;
+}
+
+/*Here is styles for my created logo*/
+/*h1 {*/
+/*    font-size: 1.5rem;*/
+/*    letter-spacing: 10px;*/
+/*    color: var(--Very-dark-cyan);*/
+/*}*/
+
+main {
+    background-color: var(--White);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px;
+    width: 50vw;
+    min-width: 800px;
+    border-radius: 20px;
+}
+
+#input {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    width: 50%;
+}
+
+.input {
+    font-size: 1rem;
+    color: var(--Grayish-cyan);
+}
+
+.input input {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--Very-light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    outline: none;
+    text-align: right;
+    font-family: 'Space Mono', sans-serif;
+}
+
+:is(.input input,#custom-tip):focus {
+    border: 2px solid var(--Strong-cyan);
+}
+
+#bill {
+    background-image: url("./images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
+
+#n-people {
+    background-image: url("./images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+}
+
+#tip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+[type='button'], #custom-tip {
+    font-family: 'Space Mono', sans-serif;
+    background-color: var(--Very-dark-cyan);
+    color: var(--White);
+    border: none;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
+
+[type='button']:hover, .pressed-button {
+    color: var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan);
+}
+
+#custom-tip {
+    box-sizing: border-box;
+    background-color: var(--Very-light-grayish-cyan);
+    outline: none;
+    color: var(--Very-dark-cyan);
+    text-align: end;
+    font-size: 1.2rem;
+}
+
+#result {
+    background-color: var(--Very-dark-cyan);
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
+    font-size: 1rem;
+    color: var(--White);
+}
+
+h3 span {
+    font-size: .8rem;
+    color: var(--Grayish-cyan);
+}
+
+.result p {
+    font-size: 3rem;
+    margin: 0;
+    color: var(--Strong-cyan)
+}
+
+#result button {
+    font-family: 'Space Mono', sans-serif;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #0D686D;
+    color: var(--Very-dark-cyan);
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+#result button:hover {
+    background-color: var(--Strong-cyan);
+}
+
+@media only screen and (max-width: 769px) {
+    main {
+        flex-direction: column;
+        width: 70vw;
+        min-width: 0;
+    }
+
+    #input, #result {
+        width: 100%;
+    }
+
+    #tip {
+        grid-template-columns: 1fr 1fr
+    }
+
+    #tip > input {
+        align-self: center;
+    }
+
+    .result p {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 575.98px) {
+    main {
+        width: 90vw;
+    }
+
+    .result p {
+        font-size: 1rem;
+    }
+}
