@@ -9,7 +9,7 @@ let tipAmount = document.getElementById('tip-amount');
 let total = document.getElementById('total');
 
 tipButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", () => {
         // Сбрасываем классы у всех кнопок и очищаем custom tip
         tipButtons.forEach((btn) => btn.classList.remove("pressed-button"));
         customTip.value = "";
@@ -23,7 +23,6 @@ tipButtons.forEach((button) => {
 });
 
 customTip.addEventListener("input", () => {
-    // Убираем активное состояние с кнопок
     tipButtons.forEach((btn) => btn.classList.remove("pressed-button"));
 
     let customValue = customTip.value;
