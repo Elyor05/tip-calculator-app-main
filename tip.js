@@ -70,4 +70,10 @@ function reset() {
     billTip = 0;
     tipAmount.innerText = '$0.00';
     total.innerText = '$0.00';
+    bill.style.border = 'none';
+    errorLabels[0].classList.add('error-label');
+    errorLabels[0].classList.remove('error-label-show');
+    nPeople.style.border = 'none';
+    errorLabels[1].classList.add('error-label');
+    errorLabels[1].classList.remove('error-label-show');
 }
