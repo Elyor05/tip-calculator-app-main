@@ -2,6 +2,8 @@ let bill = document.getElementById('bill');
 let nPeople = document.getElementById('n-people');
 let customTip = document.getElementById('custom-tip');
 
+const errorLabels = document.querySelectorAll('.error-label')
+
 let tipButtons = document.querySelectorAll("input[type=button]");
 let billTip = 0;
 
@@ -10,6 +12,25 @@ let total = document.getElementById('total');
 
 tipButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        if (bill.value === '') {
+            bill.style.border = '2px solid red';
+            errorLabels[0].classList.remove('error-label');
+            errorLabels[0].classList.add('error-label-show');
+        } else {
+            bill.style.border = 'none';
+            errorLabels[0].classList.add('error-label');
+            errorLabels[0].classList.remove('error-label-show');
+        }
+        if (nPeople.value === '') {
+            nPeople.style.border = '2px solid red';
+            errorLabels[1].classList.remove('error-label');
+            errorLabels[1].classList.add('error-label-show');
+        } else {
+            nPeople.style.border = 'none';
+            errorLabels[1].classList.add('error-label');
+            errorLabels[1].classList.remove('error-label-show');
+        }
+
         // Сбрасываем классы у всех кнопок и очищаем custom tip
         tipButtons.forEach((btn) => btn.classList.remove("pressed-button"));
         customTip.value = "";

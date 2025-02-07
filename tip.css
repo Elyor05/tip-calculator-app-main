@@ -56,6 +56,7 @@ main {
 .input {
     font-size: 1rem;
     color: var(--Grayish-cyan);
+    position: relative;
 }
 
 .input input {
@@ -74,6 +75,20 @@ main {
 
 :is(.input input,#custom-tip):focus {
     border: 2px solid var(--Strong-cyan);
+}
+
+.error-label {
+    display: none;
+}
+
+.error-label-show {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    color: red;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 #bill {
